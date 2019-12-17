@@ -6,7 +6,7 @@ import socialIcons from "../constants/social-icons"
 import links from "../constants/links"
 import logo from "../images/logo.png"
 
-const Navbar = () => {
+export default () => {
   const [isOpen, setNav] = useState(false)
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
@@ -48,4 +48,3 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
