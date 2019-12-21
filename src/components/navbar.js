@@ -1,24 +1,30 @@
 import React, { useState } from "react"
 import styles from "../css/navbar.module.css"
 import { Link } from "gatsby"
-import { FaAlignRight } from "react-icons/fa"
+import { FaAlignRight, FaWindowClose } from "react-icons/fa"
 import socialIcons from "../constants/social-icons"
 import links from "../constants/links"
 import logo from "../images/logo.png"
 
-export default () => {
-  const [isOpen, setNav] = useState(false)
+const Navbar = () => {
+  const [isOpen, setNav] = useState(0)
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
   }
-
+    
   return (
     <nav className={styles.navbar}>
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
-          <img src={logo} className={styles.brandLogo} alt="backroads logo" />
+          <Link to="/">
+            <img src={logo} className={styles.brandLogo} alt="backroads logo" />
+          </Link>
           <button type="button" className={styles.logoBtn} onClick={toggleNav}>
-            <FaAlignRight className={styles.logoIcon} />
+            {isOpen ? (
+              <FaWindowClose className={styles.logoIcon} />
+            ) : (
+              <FaAlignRight className={styles.logoIcon} />
+            )}
           </button>
         </div>
         {/* items */}
@@ -48,3 +54,4 @@ export default () => {
   )
 }
 
+export default Navbar
