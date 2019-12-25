@@ -1,5 +1,5 @@
-import React, { useState } from "react"
 import styles from "../css/navbar.module.css"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { FaAlignRight, FaWindowClose } from "react-icons/fa"
 import socialIcons from "../constants/social-icons"
