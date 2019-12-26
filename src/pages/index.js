@@ -1,14 +1,26 @@
 import React from "react"
 import Layout from "../components/layout"
-import SimpleHero from "../components/simpleHero"
 import Banner from "../components/banner"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import About from "../components/Home/About"
 import Tips from "../components/Home/Tips"
+import StyledHero from "../components/StyledHero"
 
-export default () => (
+export const query = graphql`
+  query {
+    defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxHeight: 4000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
+
+export default ({ data }) => (
   <Layout>
-    <SimpleHero>
+    <StyledHero img={data.defaultBcg.childImageSharp.fluid} home="true">
       <Banner
         title="Be Awesome"
         info="Always think as you are the best verion of yourself..."
@@ -17,9 +29,8 @@ export default () => (
           Explore Places
         </Link>
       </Banner>
-    </SimpleHero>
+    </StyledHero>
     <About />
     <Tips />
-
   </Layout>
 )
