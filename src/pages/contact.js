@@ -1,10 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
+import Contact from "../components/contact/Contact"
 
 export default () => (
   <Layout>
-    <section>
-      <h2>Contact page</h2>
-    </section>
+    <Contact />
   </Layout>
 )

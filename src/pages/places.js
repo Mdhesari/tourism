@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
+import Banner from "../components/banner"
 
 export const query = graphql`
   query {
@@ -18,9 +19,10 @@ export const query = graphql`
 export default ({data}) => (
   <Layout>
     <StyledHero img={data.places.childImageSharp.fluid}>
-      <section>
-        <h2>Places page</h2>
-      </section>
+      <Banner
+      title="Explore All Places"
+      info="We are with you"
+      ></Banner>
     </StyledHero>
   </Layout>
 )

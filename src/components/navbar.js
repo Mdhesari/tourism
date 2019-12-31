@@ -1,6 +1,6 @@
 import styles from "../css/navbar.module.css"
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { FaAlignRight, FaWindowClose } from "react-icons/fa"
 import socialIcons from "../constants/social-icons"
 import links from "../constants/links"
@@ -16,9 +16,9 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.navCenter}>
         <div className={styles.navHeader}>
-          <Link to="/">
+          <AniLink fade to="/">
             <img src={logo} className={styles.brandLogo} alt="backroads logo" />
-          </Link>
+          </AniLink>
           <button type="button" className={styles.logoBtn} onClick={toggleNav}>
             {isOpen ? (
               <FaWindowClose className={styles.logoIcon} />
@@ -37,7 +37,7 @@ const Navbar = () => {
         >
           {links.map((item, index) => (
             <li key={index}>
-              <Link to={item.path}>{item.text}</Link>
+              <AniLink fade duration={1} to={item.path}>{item.text}</AniLink>
             </li>
           ))}
         </ul>

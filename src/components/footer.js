@@ -2,7 +2,7 @@ import React from "react"
 
 import styles from "../css/footer.module.css"
 import links from "../constants/links"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import socialIcons from "../constants/social-icons"
 
 const Footer = () => {
@@ -11,9 +11,9 @@ const Footer = () => {
       {/* nav links */}
       <div className={styles.links}>
         {links.map((item, index) => (
-          <Link key={index} to={item.path}>
+          <AniLink key={index} to={item.path}>
             {item.text}
-          </Link>
+          </AniLink>
         ))}
       </div>
       {/* social media icons */}
