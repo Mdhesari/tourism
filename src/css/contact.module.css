@@ -1,6 +1,19 @@
 .contact {
   padding: 4rem 0;
 }
+
+.alert-success {
+    background-color: darkgreen;
+    color: #f7f8f9;
+    padding:7px;
+}
+
+.alert-danger {
+    background-color: darkred;
+    color: #f7f8f9;
+    padding:7px;
+}
+
 .center {
   width: 80vw;
   margin: 0 auto;

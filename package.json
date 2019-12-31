@@ -27,7 +27,8 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-icons": "^3.8.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
