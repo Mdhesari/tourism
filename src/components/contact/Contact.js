@@ -63,7 +63,9 @@ class Contact extends React.Component {
                   status === 1 ? styles.alertSuccess : styles.alertDanger
                 }
               >
-                {status === 1 ? "Thanks, We will get in touch soon!" : "Sorry, Something went wrong"}
+                {status === 1
+                  ? "Thanks, We will get in touch soon!"
+                  : "Sorry, Something went wrong"}
               </div>
             ) : (
               ""
@@ -78,7 +80,6 @@ class Contact extends React.Component {
     ev.preventDefault()
     const form = ev.target
     const data = new FormData(form)
-    console.log(data)
     const xhr = new XMLHttpRequest()
     xhr.open(form.method, form.action)
     xhr.setRequestHeader("Accept", "application/json")
@@ -89,10 +90,18 @@ class Contact extends React.Component {
       if (xhr.status === 200) {
         form.reset()
         this.setState({ status: 1 })
-        swal("Your data is submitted and we are going to contact you soon!","+989105667705","success")
+        swal(
+          "Your data is submitted and we are going to contact you soon!",
+          "+989105667705",
+          "success"
+        )
       } else {
         this.setState({ status: 0 })
-        swal("Something went wrong, please try again later.","Be careful to enter valid values!","error")
+        swal(
+          "Something went wrong, please try again later.",
+          "Be careful to enter valid values!",
+          "error"
+        )
       }
     }
 
