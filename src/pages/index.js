@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby"
 import About from "../components/Home/About"
 import Tips from "../components/Home/Tips"
 import StyledHero from "../components/StyledHero"
+import Featured from "../components/Home/Featured"
 
 export const query = graphql`
   query {
@@ -32,5 +33,6 @@ export default ({ data }) => (
     </StyledHero>
     <About />
     <Tips />
+    <Featured />
   </Layout>
 )
