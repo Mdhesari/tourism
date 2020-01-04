@@ -15,6 +15,8 @@ const PlaceTemplate = ({ data }) => {
 
   const description = data.place.description.json
 
+  console.log(description)
+
   return (
     <Layout>
       <StyledHero img={mainImage.fluid} />

@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import StyledHero from "../components/StyledHero"
 import Banner from "../components/banner"
 import { graphql } from "gatsby"
+import BlogList from "../components/Blog/BlogList"
 
 export const query = graphql`
   query {
@@ -24,5 +25,6 @@ export default ({ data }) => (
         info="Never miss learning"
       ></Banner>
     </StyledHero>
+    <BlogList />
   </Layout>
 )
