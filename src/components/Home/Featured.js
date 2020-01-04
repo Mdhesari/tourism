@@ -35,7 +35,7 @@ export default () => {
     <section className={styles.places}>
       <Title title="Featured" subTitle="Places" />
 
-      <div class={styles.center}>
+      <div className={styles.center}>
         {featuredPlaces.edges.map(({ node }) => (
           <Place key={node.contentful_id} place={node} />
         ))}
