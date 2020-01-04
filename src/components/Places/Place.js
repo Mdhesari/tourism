@@ -4,8 +4,8 @@ import Image from "gatsby-image"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export default ({ place }) => {
-  const { name, slug, images } = place
-  const mainImage = images[0].fluid
+  const { name, slug, pictures } = place
+  const mainImage = pictures[0].fluid
 
   return (
     <article className={styles.place}>

@@ -7,8 +7,8 @@ import Place from "../Places/Place"
 
 const getFeaturedPlaces = graphql`
   query {
-    featuredPlaces: allContentfulPlaces(
-      filter: { featured: { eq: true } }
+    featuredPlaces: allContentfulPlacesList(
+      filter: { featured: { eq: true }, node_locale: { eq: "en-US" } }
       limit: 3
     ) {
       edges {
@@ -17,7 +17,7 @@ const getFeaturedPlaces = graphql`
           name
           slug
           featured
-          images {
+          pictures {
             fluid {
               ...GatsbyContentfulFluid
             }
