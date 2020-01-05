@@ -7,9 +7,9 @@ import Img from "gatsby-image"
 
 const getAbout = graphql`
   query aboutImage {
-    aboutImage: file(relativePath: { eq: "defaultBcg.jpeg" }){
+    aboutImage: file(relativePath: { eq: "defaultBcg.jpeg" }) {
       childImageSharp {
-        fluid(maxWidth:600){
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
@@ -18,8 +18,7 @@ const getAbout = graphql`
 `
 
 export default () => {
-
-  const {aboutImage} = useStaticQuery(getAbout)
+  const { aboutImage } = useStaticQuery(getAbout)
 
   return (
     <section className={styles.aboutSection}>
